@@ -1,6 +1,7 @@
-import * as tf from "@tensorflow/tfjs-node";
+import * as tf from "@tensorflow/tfjs";
 import * as poseDetection from "@tensorflow-models/pose-detection";
 import { captureImage } from "./camera";
+import { decodeImage } from "@tensorflow/tfjs-backend-cpu";
 
 async function estimatePose() {
   // MoveNetモデルをロード
@@ -13,7 +14,7 @@ async function estimatePose() {
     const imageBuffer = await captureImage();
 
     // 画像をTensor形式に変換
-    const imageTensor = tf.node.decodeImage(imageBuffer, 3); // tf.node.decodeImageを使用
+    const imageTensor = decodeImage(imageBuffer, 3);
 
     // 推定実行
     const poses = await detector.estimatePoses(imageTensor);
