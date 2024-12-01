@@ -1,7 +1,6 @@
-import * as tf from "@tensorflow/tfjs";
+import * as tf from "@tensorflow/tfjs-node";
 import * as poseDetection from "@tensorflow-models/pose-detection";
 import { captureImage } from "./camera";
-import "@tensorflow/tfjs-node";
 
 async function estimatePose() {
   // MoveNetモデルをロード
