@@ -1,5 +1,17 @@
 {
   "scripts": {
     "test-pi": "ts-node src/test.ts"
+  },
+  "name": "fall-detected",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true
   }
 }
